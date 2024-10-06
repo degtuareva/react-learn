@@ -7,6 +7,7 @@ import { Ground } from "./Ground";
 export const App=()=>{
     return(
         <>
+        
         <Playstation/>
         <Eggs/>
         <Ground/>
