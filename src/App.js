@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Playstation } from "./Playstation";
 import { Eggs } from "./Eggs";
 import { Ground } from "./Ground";
 
 
 export const App=()=>{
+    const[shouldShowText,setShouldShowText]=useState(false);
+
+    const onChange=(e)=>{
+    console.log(e.target.value);
+    };
+    const show=()=>{
+        setShouldShowText((prevShowText)=>!prevShowText);
+    };
+    console.log(shouldShowText);
     return(
         <>
-        
+        <button onClick={show}>show</button>
+         {/* {shouldShowText?<span>text</span>:<span>two</span>} */}
+        {shouldShowText && <span>text</span>}
+        <input type="text" onChange={onChange}/>
         <Playstation/>
         <Eggs/>
         <Ground/>
